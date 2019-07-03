@@ -1,0 +1,46 @@
+{
+  "name": "Inscription",
+  "plural": "inscriptions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "etat": {
+      "type": "string",
+      "required": true
+    },
+    "formation_id": {
+      "type": "string"
+    },
+    "client_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "client": {
+      "type": "belongsTo",
+      "model": "Client",
+      "foreignKey": "client_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "formation": {
+      "type": "belongsTo",
+      "model": "Formation",
+      "foreignKey": "formation_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

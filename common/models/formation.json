@@ -1,0 +1,61 @@
+{
+  "name": "Formation",
+  "plural": "formations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "duree": {
+      "type": "number"
+    },
+    "theme": {
+      "type": "string",
+      "required": true
+    },
+    "prix": {
+      "type": "string",
+      "required": true
+    },
+    "formateur_id": {
+      "type": "string"
+    },
+    "salle_id": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "formateur": {
+      "type": "belongsTo",
+      "model": "Formateur",
+      "foreignKey": "formateur_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "salle": {
+      "type": "belongsTo",
+      "model": "Salle",
+      "foreignKey": "salle_id",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "inscriptions": {
+      "type": "hasMany",
+      "model": "Inscription",
+      "foreignKey": "formation_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

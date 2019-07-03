@@ -1,0 +1,23 @@
+{
+  "name": "Client",
+  "plural": "clients",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "inscriptions": {
+      "type": "hasMany",
+      "model": "Inscription",
+      "foreignKey": "client_id",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

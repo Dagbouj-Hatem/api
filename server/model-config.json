@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDB",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mongoDB",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDB",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDB",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Formateur": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Formation": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Salle": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Client": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Administrateur": {
+    "dataSource": "mongoDB",
+    "public": true
+  },
+  "Inscription": {
+    "dataSource": "mongoDB",
+    "public": true
+  }
+}
